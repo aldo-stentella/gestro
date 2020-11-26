@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:application="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd" version="5">
+  <description>gestione brevetti</description>
+  <display-name>brevetti</display-name>
+  <module>
+    <web>
+      <web-uri>brevetti-web.war</web-uri>
+      <context-root>/</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>brevetti-ejb.jar</ejb>
+  </module>
+  <library-directory>lib</library-directory>
+</application>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="classificazioni_trovato" language="groovy" pageWidth="300" pageHeight="842" columnWidth="290" leftMargin="5" rightMargin="5" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1"/>
+	<parameter name="nsrif" class="java.lang.Integer"/>
+	<parameter name="tipo" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     CLASSIFICAZIONI."CODICE" AS CLASSIFICAZIONI_CODICE,
+     CLASSIFICAZIONI."NOME" AS CLASSIFICAZIONI_NOME,
+     CLASSIFICAZIONI."DESCRIZIONE" AS CLASSIFICAZIONI_DESCRIZIONE,
+     CLASSIFICAZIONI."TIPO" AS CLASSIFICAZIONI_TIPO,
+     CLASSIFICAZIONI."LIVELLO" AS CLASSIFICAZIONI_LIVELLO
+FROM
+     "BREVETTI"."CLASSIFICAZIONI" CLASSIFICAZIONI INNER JOIN "BREVETTI"."CLASSIFICAZIONE_INTERN_DEP" CLASSIFICAZIONE_INTERN_DEP ON CLASSIFICAZIONI."CLASSIFICAZIONI_ID" = CLASSIFICAZIONE_INTERN_DEP."CLASSIFICAZIONI_ID"
+WHERE
+     CLASSIFICAZIONI."TIPO" = $P{tipo}
+ AND CLASSIFICAZIONE_INTERN_DEP."NSRIF" = $P{nsrif}]]>
+	</queryString>
+	<field name="CLASSIFICAZIONI_CODICE" class="java.lang.String"/>
+	<field name="CLASSIFICAZIONI_NOME" class="java.lang.String"/>
+	<field name="CLASSIFICAZIONI_DESCRIZIONE" class="java.lang.String"/>
+	<field name="CLASSIFICAZIONI_TIPO" class="java.math.BigDecimal"/>
+	<field name="CLASSIFICAZIONI_LIVELLO" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="">
+				<reportElement x="15" y="0" width="240" height="19"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[( $F{CLASSIFICAZIONI_TIPO}.intValue() == 1 ?
+$F{CLASSIFICAZIONI_NOME}.substring( $F{CLASSIFICAZIONI_NOME}.indexOf( " - " ) + 3 )
+: $F{CLASSIFICAZIONI_NOME} )]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement x="5" y="5" width="3" height="3" backcolor="#666666"/>
+			</ellipse>
+		</band>
+	</detail>
+</jasperReport>

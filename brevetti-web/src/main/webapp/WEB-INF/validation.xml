@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+	<global/>
+	<formset>
+		<form name="Login">
+			<field property="login"
+			       depends="required">
+				<arg position="0" key="labels.Login"/>
+			</field>
+			<field property="password"
+			       depends="required">
+				<arg position="0" key="labels.Password"/>
+			</field>
+		</form>
+		<form name="iform">
+			<field property="id">
+				<arg position="0" key="labels.Login"/>
+			</field>
+			<field property="matricolaCnr">
+				<arg position="0" key="labels.Matricola"/>
+			</field>
+			<field property="nome"
+			       depends="required">
+				<arg position="0" key="labels.FirstName"/>
+			</field>
+			<field property="cognome"
+			       depends="required">
+				<arg position="0" key="labels.FamilyName"/>
+			</field>
+			<field property="indirizzo"
+			       depends="required">
+				<arg position="0" key="labels.Address"/>
+			</field>
+			<field property="cap">
+				<arg position="0" key="labels.Zipcode"/>
+			</field>
+			<field property="citta"
+			       depends="required">
+				<arg position="0" key="labels.City"/>
+			</field>
+			<field property="telefono">
+				<arg position="0" key="labels.Telephone"/>
+			</field>
+			<field property="cellulare">
+				<arg position="0" key="labels.Mobile"/>
+			</field>
+			<field property="fax">
+				<arg position="0" key="labels.Fax"/>
+			</field>
+			<field property="email"
+			       depends="required,email">
+				<arg position="0" key="labels.E-mail"/>
+			</field>
+			<field property="banca">
+				<arg position="0" key="labels.Bank"/>
+			</field>
+			<field property="abi">
+				<arg position="0" key="labels.ABI"/>
+			</field>
+			<field property="cab">
+				<arg position="0" key="labels.CAB"/>
+			</field>
+			<field property="cc">
+				<arg position="0" key="labels.CC"/>
+			</field>
+			<field property="enteRecapito"/>
+			<field property="strutturaEnteRecapito"/>
+		</form>
+		<form name="eform">
+			<field property="id"/>
+			<field property="nome"/>
+			<field property="struttura"/>
+			<field property="sigla"/>
+			<field property="indirizzo"/>
+			<field property="cap"/>
+			<field property="localita"/>
+			<field property="provincia"/>
+			<field property="regione"/>
+			<field property="statoId"/>
+			<field property="telefono"/>
+			<field property="telex"/>
+			<field property="fax"/>
+			<field property="email"/>
+			<field property="sitoWeb"/>
+			<field property="partitaIva"/>
+			<field property="note"/>
+		</form>
+		<form name="datiFattura">
+			<field property="id">
+			        <arg position="0" key="labels.Id"/>
+			</field>
+			<field property="protocollo">
+			        <arg position="0" key="labels.Protocol"/>
+			</field>
+			<field property="studioBrevettualeId"
+			       depends="required">
+			        <arg position="0" key="labels.PatentOfficeId"/>
+			</field>
+			<field property="studioDescrizione">
+			        <arg position="0" key="labels.PatentOffice"/>
+			</field>
+			<field property="_dataFattura"
+			       depends="required">
+			        <arg position="0" key="labels.InvoiceDate"/>
+			</field>
+			<field property="numFattura"
+			       depends="required">
+			        <arg position="0" key="labels.InvoiceNr"/>
+			</field>
+			<field property="importo">
+			        <arg position="0" key="labels.Amount"/>
+			</field>
+			<field property="_dataImpegno">
+			        <arg position="0" key="labels.CommitmentDate"/>
+			</field>
+			<field property="mandatoProtocollo">
+			        <arg position="0" key="labels.Order"/>
+			</field>
+			<field property="impegnoObbligazione">
+			        <arg position="0" key="labels.CommitmentNr"/>
+			</field>
+			<field property="note">
+			        <arg position="0" key="labels.Note"/>
+			</field>
+		</form>
+	</formset>
+</form-validation>

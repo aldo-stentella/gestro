@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+ <data-sources/>
+ <form-beans>
+  <form-bean name="trovati" type="it.cnr.brevetti.trovati.actionForms.TrovatoForm"/>
+  <form-bean name="trovatoQuery" type="it.cnr.brevetti.trovati.actionForms.TrovatoQueryForm"/>
+  <form-bean name="depositi" type="it.cnr.brevetti.depositi.actionForms.DepositoForm"/>
+  <form-bean name="login" type="it.cnr.brevetti.login.actionForms.LoginForm">
+   <form-property name="login" type="java.lang.String"/>
+   <form-property name="password" type="java.lang.String"/>
+  </form-bean>
+  <form-bean name="inventori" type="it.cnr.brevetti.inventori.actionForms.InventoreForm">
+   <form-property name="nome" type="java.lang.String"/>
+   <form-property name="strutturaEnteRecapito" type="java.lang.String"/>
+   <form-property name="tipo" type="java.lang.String"/>
+   <form-property name="abi" type="java.lang.String"/>
+   <form-property name="indirizzo" type="java.lang.String"/>
+   <form-property name="email" type="java.lang.String"/>
+   <form-property name="id" type="java.lang.Integer"/>
+   <form-property name="matricolaCnr" type="java.lang.Integer"/>
+   <form-property name="enteRecapito" type="java.lang.String"/>
+   <form-property name="cc" type="java.lang.String"/>
+   <form-property name="banca" type="java.lang.String"/>
+   <form-property name="cap" type="java.lang.String"/>
+   <form-property name="cellulare" type="java.lang.String"/>
+   <form-property name="fax" type="java.lang.String"/>
+   <form-property name="citta" type="java.lang.String"/>
+   <form-property name="cognome" type="java.lang.String"/>
+   <form-property name="telefono" type="java.lang.String"/>
+   <form-property name="cab" type="java.lang.String"/>
+  </form-bean>
+  <form-bean name="entiEsterni" type="it.cnr.brevetti.entiEsterni.actionForms.EnteEsternoForm">
+   <form-property name="telefono" type="java.lang.String"/>
+   <form-property name="sigla" type="java.lang.String"/>
+   <form-property name="telex" type="java.lang.String"/>
+   <form-property name="email" type="java.lang.String"/>
+   <form-property name="fax" type="java.lang.String"/>
+   <form-property name="cap" type="java.lang.String"/>
+   <form-property name="partitaIva" type="java.lang.String"/>
+   <form-property name="indirizzo" type="java.lang.String"/>
+   <form-property name="localita" type="java.lang.String"/>
+   <form-property name="statoId" type="java.lang.String"/>
+   <form-property name="regione" type="java.lang.String"/>
+   <form-property name="sitoWeb" type="java.lang.String"/>
+   <form-property name="provincia" type="java.lang.String"/>
+   <form-property name="struttura" type="java.lang.String"/>
+   <form-property name="note" type="java.lang.String"/>
+   <form-property name="nome" type="java.lang.String"/>
+   <form-property name="id" type="java.lang.Integer"/>
+  </form-bean>
+  <form-bean name="fatturaQuery" type="it.cnr.brevetti.fatture.actionForms.FatturaQueryForm"/>
+  <form-bean name="fatture" type="it.cnr.brevetti.fatture.actionForms.FatturaForm">
+   <form-property name="numFattura" type="java.lang.String"/>
+   <form-property name="id" type="java.lang.Integer"/>
+   <form-property name="mandatoProtocollo" type="java.lang.String"/>
+   <form-property name="_dataImpegno" type="java.lang.String"/>
+   <form-property name="note" type="java.lang.String"/>
+   <form-property name="protocollo" type="java.lang.String"/>
+   <form-property name="impegnoObbligazione" type="java.lang.String"/>
+   <form-property name="_dataFattura" type="java.lang.String"/>
+   <form-property name="importo" type="java.math.BigDecimal"/>
+   <form-property name="studioBrevettualeId" type="java.lang.Integer"/>
+   <form-property name="studioDescrizione" type="java.lang.String"/>
+  </form-bean>
+  <form-bean name="vociFattura" type="it.cnr.brevetti.fatture.actionForms.VoceForm"/>
+  <form-bean name="valorizzazioni" type="it.cnr.brevetti.valorizzazioni.actionForms.ValorizzazioneForm"/>
+  <form-bean name="valorizzazioneQuery" type="it.cnr.brevetti.valorizzazioni.actionForms.ValorizzazioneQueryForm"/>
+  <form-bean name="verbaliQuery" type="it.cnr.brevetti.verbali.actionForms.VerbaliQueryForm"/>
+ </form-beans>
+ <global-exceptions>
+  <exception key="exceptions.ExpiredSession" path="/errorPage.jsp" type="it.cnr.brevetti.login.exceptions.ExpiredSessionException"/>
+  <exception key="exceptions.InternalError" path="/errorPage.jsp" type="java.lang.Exception"/>
+ </global-exceptions>
+ <global-forwards>
+  <forward name="home" path="/home.jsp" redirect="false"/>
+  <forward name="login" path="/login.jsp" redirect="false"/>
+  <forward name="null" path="/WEB-INF/jsp/util/null.jsp" redirect="false"/>
+  <forward name="close" path="/WEB-INF/jsp/util/close.jsp"/>
+  <forward name="updateAndClose" path="/WEB-INF/jsp/util/updateAndClose.jsp"/>
+  <forward name="Elogin" path="/external/Login.jsp" redirect="false"/>
+ </global-forwards>
+ <action-mappings>
+  <action path="/home" type="it.cnr.brevetti.login.actions.HomeAction"/>
+  <action attribute="Login" input="/login.jsp" name="login"
+   path="/login" scope="request"
+   type="it.cnr.brevetti.login.actions.LoginAction" validate="true">
+   <exception key="exceptions.LoginFailure" path="/login.jsp" type="it.cnr.brevetti.login.exceptions.LoginFailureException"/>
+   <forward name="open" path="/openWin.jsp" redirect="false"/>
+  </action>
+  <action path="/logout" type="it.cnr.brevetti.login.actions.LogoutAction">
+   <forward name="close" path="/openWin.jsp" redirect="false"/>
+  </action>
+  <action path="/SwitchDip" type="it.cnr.brevetti.login.actions.SwitchDipAction">
+   <forward name="switch" path="/openWin.jsp" redirect="false"/>
+  </action>
+  <action attribute="trovatoQuery" input="/QbeTro.jsp"
+   name="trovatoQuery" path="/GesTro" scope="request"
+   type="it.cnr.brevetti.trovati.actions.GesTro" validate="false">
+   <forward name="1.gestro" path="/GesTro.jsp" redirect="false"/>
+   <forward name="2.qbetro" path="/QbeTro.jsp" redirect="false"/>
+   <forward name="trovati" path="/Trovati.do" redirect="true"/>
+   <forward name="infotrov" path="/InfoTrov.do" redirect="true"/>
+   <forward name="seltro" path="/SelTro.jsp" redirect="false"/>
+  </action>
+  <action attribute="datiTrovato" input="/DatiTrov.jsp" name="trovati"
+   path="/Trovati" scope="session"
+   type="it.cnr.brevetti.trovati.actions.Trovati" validate="true">
+   <forward name="1.datitrov" path="/DatiTrov.jsp" redirect="false"/>
+   <forward name="2.invetrov" path="/InveTrov.jsp" redirect="false"/>
+   <forward name="3.richtrov" path="/RichTrov.jsp" redirect="false"/>
+   <forward name="4.clastrov" path="/ClasTrov.jsp" redirect="false"/>
+   <forward name="5.estetrov" path="/EsteTrov.jsp" redirect="false"/>
+   <forward name="7.valotrov" path="/ValoTrov.jsp" redirect="false"/>
+   <forward name="8.docutrov" path="/DocuTrov.jsp" redirect="false"/>
+   <forward name="9.fatttrov" path="/FattTrov.jsp" redirect="false"/>
+   <forward name="successful" path="/OkTrov.jsp" redirect="false"/>
+  </action>
+  <action attribute="datiTrovato" input="/InfoTrov.jsp" name="trovati"
+   path="/InfoTrov" scope="session"
+   type="it.cnr.brevetti.trovati.actions.InfoTrov" validate="false">
+   <forward name="infotrov" path="/InfoTrov.jsp" redirect="false"/>
+  </action>
+  <action path="/NewTro" type="it.cnr.brevetti.trovati.actions.NewTro">
+   <forward name="seltipotrov" path="/SelTipoTrov.jsp"/>
+  </action>
+  <action path="/SelIstituto" type="it.cnr.brevetti.istituti.actions.SelIstituto">
+   <forward name="SelIstituto" path="/SelIstituto.jsp" redirect="false"/>
+  </action>
+  <action attribute="eform" input="/FormEnte.jsp" name="entiEsterni"
+   path="/EnteForm" scope="request"
+   type="it.cnr.brevetti.trovati.actions.SelTitolare" validate="true">
+   <forward name="SelTitolare" path="/SelTitolare.jsp" redirect="false"/>
+   <forward name="FormEnte" path="/FormEnte.jsp?action=EnteForm.do" redirect="false"/>
+  </action>
+  <action attribute="eform" input="/InfoEnte.jsp" name="entiEsterni"
+   path="/InfoEnte" scope="request" type="it.cnr.brevetti.entiEsterni.actions.InfoEnte">
+   <forward name="InfoEnte" path="/InfoEnte.jsp" redirect="false"/>
+  </action>
+  <action attribute="eform" input="/FormEnte.jsp" name="entiEsterni"
+   path="/SelTitolare" scope="request"
+   type="it.cnr.brevetti.trovati.actions.SelTitolare" validate="false">
+   <forward name="SelTitolare" path="/SelTitolare.jsp" redirect="false"/>
+   <forward name="FormEnte" path="/FormEnte.jsp?action=EnteForm.do" redirect="false"/>
+  </action>
+  <action path="/DelTitolare" type="it.cnr.brevetti.trovati.actions.DelTitolare">
+   <forward name="DelTitolare" path="/DelTitolare.jsp" redirect="false"/>
+  </action>
+  <action attribute="iform" input="/FormInventore.jsp" name="inventori"
+   path="/InventoreForm" scope="request"
+   type="it.cnr.brevetti.inventori.actions.SelInventore" validate="true">
+   <forward name="FormInventore" path="/FormInventore.jsp" redirect="false"/>
+   <forward name="SelInventore" path="/SelInventore.jsp" redirect="false"/>
+  </action>
+  <action attribute="iform" input="/FormInventore.jsp" name="inventori"
+   path="/SelInventore" scope="request"
+   type="it.cnr.brevetti.inventori.actions.SelInventore" validate="false">
+   <forward name="SelInventore" path="/SelInventore.jsp" redirect="false"/>
+   <forward name="FormInventore" path="/FormInventore.jsp" redirect="false"/>
+  </action>
+  <action attribute="iform" input="/InfoInventore.jsp" name="inventori"
+   path="/InfoInventore" scope="request"
+   type="it.cnr.brevetti.inventori.actions.InfoInventore" validate="false">
+   <forward name="InfoInventore" path="/InfoInventore.jsp" redirect="false"/>
+  </action>
+  <action path="/SelStato" type="it.cnr.brevetti.stati.actions.SelStato">
+   <forward name="SelStato" path="/SelStato.jsp" redirect="false"/>
+  </action>
+  <action path="/SelClasse" type="it.cnr.brevetti.classificazioniInternDep.actions.SelClasse">
+   <forward name="SelClasse" path="/SelClasse.jsp" redirect="false"/>
+  </action>
+  <action path="/InfoClasse" type="it.cnr.brevetti.classificazioniInternDep.actions.InfoClasse">
+   <forward name="InfoClasse" path="/InfoClasse.jsp" redirect="false"/>
+  </action>
+  <action path="/AddNote" type="it.cnr.brevetti.trovati.actions.AddNote">
+   <forward name="AddNote" path="/AddNote.jsp" redirect="false"/>
+  </action>
+  <action attribute="datiDepEst" input="/AddDepo.jsp" name="depositi"
+   path="/AddDepo" scope="request"
+   type="it.cnr.brevetti.depositi.actions.AddDepo" validate="false">
+   <forward name="AddDepo" path="/AddDepo.jsp" redirect="false"/>
+   <forward name="AddEst" path="/AddEst.jsp"/>
+   <forward name="AddEpc" path="/AddEpc.jsp"/>
+  </action>
+  <action attribute="datiDepEst" input="/AddDepo.jsp" name="depositi"
+   path="/InsDepo" scope="request"
+   type="it.cnr.brevetti.depositi.actions.AddDepo" validate="true">
+   <forward name="AddDepo" path="/AddDepo.jsp" redirect="false"/>
+   <forward name="AddEst" path="/AddEst.jsp"/>
+   <forward name="AddEpc" path="/AddEpc.jsp"/>
+  </action>
+  <action attribute="datiDepEst" input="/AddEst.jsp" name="depositi"
+   path="/InsPct" scope="request"
+   type="it.cnr.brevetti.depositi.actions.AddDepo" validate="true">
+   <forward name="AddDepo" path="/AddDepo.jsp" redirect="false"/>
+   <forward name="AddEst" path="/AddEst.jsp"/>
+   <forward name="AddEpc" path="/AddEpc.jsp"/>
+  </action>
+  <action attribute="datiDepEst" input="/AddEpc.jsp" name="depositi"
+   path="/InsEpc" scope="request"
+   type="it.cnr.brevetti.depositi.actions.AddDepo" validate="true">
+   <forward name="AddDepo" path="/AddDepo.jsp" redirect="false"/>
+   <forward name="AddEst" path="/AddEst.jsp"/>
+   <forward name="AddEpc" path="/AddEpc.jsp"/>
+  </action>
+  <action attribute="datiDepEst" input="/DelDepo.jsp" name="depositi"
+   path="/DelDepo" scope="request"
+   type="it.cnr.brevetti.depositi.actions.DelDepo" validate="false">
+   <forward name="DelDepo" path="/DelDepo.jsp" redirect="false"/>
+  </action>
+  <action attribute="fatturaQuery" input="/QbeFat.jsp"
+   name="fatturaQuery" path="/GesFat" scope="request"
+   type="it.cnr.brevetti.fatture.actions.GesFat" validate="false">
+   <forward name="1.gesfat" path="/GesFat.jsp" redirect="false"/>
+   <forward name="2.qbefat" path="/QbeFat.jsp" redirect="false"/>
+   <forward name="gestione" path="/GetFattura.do?readonly=n" redirect="true"/>
+   <forward name="consultazione" path="/GetFattura.do?readonly=y" redirect="true"/>
+   <forward name="selfat" path="/SelFat.jsp" redirect="false"/>
+  </action>
+  <action attribute="fatturaQuery" input="/QbeFat.jsp"
+   name="fatturaQuery" path="/GesFat2" scope="request"
+   type="it.cnr.brevetti.fatture.actions.GesFat2" validate="false">
+   <forward name="2.qbefat" path="/QbeFat2.jsp" redirect="false"/>
+   <forward name="consultazione" path="/Fatture2.jsp" redirect="true"/>
+   <forward name="selfat" path="/SelFat2.jsp" redirect="false"/>
+  </action>
+  <action attribute="datiFattura" input="/Fatture.jsp" name="fatture"
+   path="/Fatture" scope="request"
+   type="it.cnr.brevetti.fatture.actions.Fatture" validate="false">
+   <forward name="fatture" path="/Fatture.jsp" redirect="false"/>
+   <forward name="successful" path="/OkFatt.jsp" redirect="false"/>
+  </action>
+  <action attribute="datiFattura" input="/Fatture.jsp" name="fatture"
+   path="/GetFattura" scope="request"
+   type="it.cnr.brevetti.fatture.actions.Fatture" validate="false">
+   <forward name="fatture" path="/Fatture.jsp" redirect="false"/>
+  </action>
+  <action attribute="voceFattura" input="/AddVoce.jsp"
+   name="vociFattura" path="/AddVoce" scope="request"
+   type="it.cnr.brevetti.fatture.actions.AddVoce" validate="false">
+   <forward name="AddVoce" path="/AddVoce.jsp" redirect="false"/>
+  </action>
+  <action attribute="voceFattura" input="/DelVoce.jsp"
+   name="vociFattura" path="/DelVoce" scope="request"
+   type="it.cnr.brevetti.fatture.actions.DelVoce" validate="false">
+   <forward name="DelVoce" path="/DelVoce.jsp" redirect="false"/>
+  </action>
+  <action forward="/GetFattura.do?readonly=n" path="/NewFat"/>
+  <action forward="/working.jsp" path="/NewCon"/>
+  <action forward="/working.jsp" path="/GesCon"/>
+  <action forward="/working.jsp" path="/NewRub"/>
+  <action forward="/working.jsp" path="/GesRub"/>
+  <action path="/Catalogo" type="it.cnr.brevetti.trovati.actions.Catalogo">
+   <exception key="exceptions.InternalError"
+    path="/reports/errorPage.jsp" type="java.lang.Exception"/>
+   <forward name="Catalogo" path="/reports/catalogo.jsp" redirect="false"/>
+   <forward name="ListaCatalogo" path="/reports/ListaCatalogo.jsp" redirect="false"/>
+  </action>
+  <action path="/ClickAnalysis" type="it.cnr.brevetti.trovati.actions.ClickAnalysis">
+   <forward name="Tuning" path="/reports/Tuning.jsp" redirect="false"/>
+  </action>
+  <action path="/DelClasse" type="it.cnr.brevetti.classificazioniInternDep.actions.DelClasse">
+   <forward name="DelClasse" path="/DelClasse.jsp" redirect="false"/>
+  </action>
+  <action path="/Tuning" type="it.cnr.brevetti.trovati.actions.Tuning">
+   <forward name="EvalCatalogo" path="/reports/EvalCatalogo.jsp" redirect="false"/>
+   <forward name="Tuning" path="/reports/Tuning.jsp" redirect="false"/>
+  </action>
+  <action path="/Contatti" type="it.cnr.brevetti.trovati.actions.Contatti">
+   <forward name="Contatti" path="/reports/Contatti.jsp" redirect="false"/>
+  </action>
+  <action path="/InfoCatalogo" type="it.cnr.brevetti.trovati.actions.InfoCatalogo">
+   <exception key="exceptions.InternalError"
+    path="/reports/errorPage.jsp" type="it.cnr.brevetti.util.ServiceLocatorException"/>
+   <forward name="InfoCatalogo" path="/reports/InfoCatalogo.jsp" redirect="false"/>
+  </action>
+  <action path="/InfoCatalogoPDF" type="it.cnr.brevetti.trovati.actions.InfoCatalogoPDF">
+   <forward name="InfoCatalogoPDF" path="/reports/InfoCatalogoPDF.jsp" redirect="false"/>
+  </action>
+  <action attribute="iform" input="/Inventore.jsp" name="inventori"
+   path="/GesInv" scope="request"
+   type="it.cnr.brevetti.inventori.actions.GesInv" validate="false">
+   <forward name="QbeInv" path="/QbeInv.jsp" redirect="false"/>
+   <forward name="FormInventore" path="/Inventore.jsp" redirect="false"/>
+  </action>
+  <action attribute="iform" input="/Inventore.jsp" name="inventori"
+   path="/AddInv" scope="request"
+   type="it.cnr.brevetti.inventori.actions.GesInv" validate="true">
+   <forward name="QbeInv" path="/QbeInv.jsp" redirect="false"/>
+   <forward name="FormInventore" path="/Inventore.jsp" redirect="false"/>
+  </action>
+  <action path="/DelStorico" type="it.cnr.brevetti.trovati.actions.DelStorico">
+   <forward name="DelStorico" path="/DelStorico.jsp"/>
+  </action>
+  <action attribute="eform" input="/FormEnte.jsp" name="entiEsterni"
+   path="/SelStorico" scope="request"
+   type="it.cnr.brevetti.trovati.actions.SelStorico" validate="false">
+   <forward name="SelTitolare" path="/SelTitolare.jsp" redirect="false"/>
+   <forward name="FormEnte" path="/FormEnte.jsp?action=EnteFormS.do" redirect="false"/>
+  </action>
+  <action attribute="eform" input="/FormEnte.jsp" name="entiEsterni"
+   path="/EnteFormS" scope="request"
+   type="it.cnr.brevetti.trovati.actions.SelStorico" validate="true">
+   <forward name="FormEnte" path="/FormEnte.jsp?action=EnteFormS.do"/>
+   <forward name="SelTitolare" path="/SelTitolare.jsp"/>
+  </action>
+  <action attribute="iform" input="/InfoVal.jsp" name="valorizzazioni"
+   path="/InfoVal" scope="request"
+   type="it.cnr.brevetti.valorizzazioni.actions.InfoVal" validate="false">
+   <forward name="InfoVal" path="/InfoVal.jsp"/>
+  </action>
+  <action attribute="valorizzazioneQuery" input="/QbeVal.jsp"
+   name="valorizzazioneQuery" path="/GesVal" scope="request"
+   type="it.cnr.brevetti.valorizzazioni.actions.GesVal" validate="true">
+   <forward name="2.qbeval" path="/QbeVal.jsp" redirect="false"/>
+   <forward name="valorizzazione" path="/Valorizzazione.jsp"/>
+   <forward name="selval" path="/SelVal.jsp" redirect="false"/>
+  </action>
+  <action attribute="iform" input="/Valorizzazione.jsp"
+   name="valorizzazioni" path="/Valorizzazione" scope="request"
+   type="it.cnr.brevetti.valorizzazioni.actions.Valorizzazioni" validate="true">
+   <forward name="valorizzazione" path="/Valorizzazione.jsp"/>
+   <forward name="successful" path="/OkVal.jsp" redirect="false"/>
+  </action>
+  <action attribute="iform" input="/Valorizzazione.jsp"
+   name="valorizzazioni" path="/AddVal" scope="request"
+   type="it.cnr.brevetti.valorizzazioni.actions.Valorizzazioni" validate="false">
+   <forward name="valorizzazione" path="/Valorizzazione.jsp"/>
+  </action>
+  <action forward="/SelClu.jsp" path="/SelClu"/>
+  <action forward="/SelAzienda.jsp" path="/SelAzienda"/>
+  <action path="/Documenti" type="it.cnr.brevetti.trovati.actions.Documenti">
+   <forward name="documenti" path="/Documenti.jsp"/>
+  </action>
+  <action path="/Contratti" type="it.cnr.brevetti.valorizzazioni.actions.Contratti">
+   <forward name="contratti" path="/Contratti.jsp"/>
+  </action>
+  <action path="/DelDocumenti" type="it.cnr.brevetti.trovati.actions.DelDocumenti">
+   <forward name="documenti" path="/Documenti.jsp"/>
+  </action>
+  <action path="/DelContratti" type="it.cnr.brevetti.valorizzazioni.actions.DelContratti"/>
+  <action path="/AddDepoList" type="it.cnr.brevetti.depositi.actions.AddDepoList">
+   <forward name="AddDepoList" path="/AddDepoList.jsp"/>
+   <forward name="AddDepoWiz" path="/AddDepoWiz.jsp"/>
+  </action>
+  <action attribute="datiDepoWiz" input="/AddDepoWiz.jsp"
+   name="depositi" path="/AddDepoWiz" scope="request"
+   type="it.cnr.brevetti.depositi.actions.AddDepoList" validate="true">
+   <forward name="AddDepoWiz" path="/AddDepoWiz.jsp"/>
+   <forward name="AddDepoList" path="/AddDepoList.jsp"/>
+  </action>
+  <action attribute="Login" input="/external/Login.jsp" name="login"
+   path="/external/Login" scope="request"
+   type="it.cnr.brevetti.proposte.actions.Elogin" validate="true">
+   <exception key="exceptions.LoginFailure" path="/external/Home.do" type="it.cnr.brevetti.login.exceptions.LoginFailureException"/>
+   <forward name="Ehome" path="/external/Home.do" redirect="true"/>
+  </action>
+  <action path="/external/Home" type="it.cnr.brevetti.proposte.actions.Ehome">
+   <exception key="exceptions.InternalError"
+    path="/external/errorPage.jsp" type="java.lang.Exception"/>
+   <forward name="Ehome" path="/external/Home.jsp" redirect="false"/>
+   <forward name="EselPro" path="/external/GesPro.do"/>
+  </action>
+  <action path="/external/AddPro" type="it.cnr.brevetti.proposte.actions.AddPro">
+   <exception key="exceptions.InternalError"
+    path="/external/errorPage.jsp" type="java.lang.Exception"/>
+   <forward name="AddPro" path="/external/AddPro.jsp" redirect="false"/>
+   <forward name="EokPro" path="/external/OkPro.jsp" redirect="false"/>
+  </action>
+  <action path="/GesPro" type="it.cnr.brevetti.proposte.actions.GesPro">
+   <forward name="GesPro" path="/QbePro.jsp"/>
+   <forward name="SelPro" path="/SelPro.jsp"/>
+   <forward name="InventionDisclosure" path="/InventionDisclosure.jsp"/>
+  </action>
+  <action path="/external/Logout" type="it.cnr.brevetti.proposte.actions.Elogout">
+   <exception key="exceptions.InternalError"
+    path="/external/errorPage.jsp" type="java.lang.Exception"/>
+  </action>
+  <action path="/external/GesPro" type="it.cnr.brevetti.proposte.actions.EgesPro">
+   <exception key="exceptions.InternalError"
+    path="/external/errorPage.jsp" type="java.lang.Exception"/>
+   <forward name="EselPro" path="/external/SelPro.jsp"/>
+   <forward name="EgesPro" path="/external/GesPro.jsp"/>
+   <forward name="EokPro" path="/external/OkPro.jsp" redirect="false"/>
+  </action>
+  <action path="/ModPro" type="it.cnr.brevetti.proposte.actions.ModPro">
+   <forward name="OkPro" path="/OkPro.jsp"/>
+  </action>
+  <action path="/AddVerb" type="it.cnr.brevetti.verbali.actions.AddVerb">
+   <forward name="AddVerb" path="/AddVerb.jsp"/>
+  </action>
+  <action path="/GesVerb"
+  attribute="verbaliQuery" input="/GesVerb.jsp"
+   name="verbaliQuery" scope="request" validate="true"
+   type="it.cnr.brevetti.verbali.actions.GesVerb">
+   <forward name="GesVerb" path="/GesVerb.jsp"/>
+  </action>
+ </action-mappings>
+ <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+ <message-resources parameter="it.cnr.brevetti.resources.application"/>
+ <message-resources key="TM" parameter="it.cnr.brevetti.resources.applicationTM"/>
+ <message-resources key="BI" parameter="it.cnr.brevetti.resources.applicationBI"/>
+ <message-resources key="MU" parameter="it.cnr.brevetti.resources.applicationMU"/>
+ <message-resources key="SW" parameter="it.cnr.brevetti.resources.applicationSW"/>
+ <message-resources key="DA" parameter="it.cnr.brevetti.resources.applicationDA"/>
+ <message-resources key="KH" parameter="it.cnr.brevetti.resources.applicationKH"/>
+ <message-resources key="NV" parameter="it.cnr.brevetti.resources.applicationNV"/>
+ <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+  <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+ </plug-in>
+ <plug-in className="org.apache.struts.tiles.TilesPlugin">
+  <set-property property="moduleAware" value="true"/>
+  <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml"/>
+ </plug-in>
+</struts-config>

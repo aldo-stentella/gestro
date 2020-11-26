@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN" "urlrewrite3.0.dtd">
+<urlrewrite use-query-string="true" default-match-type="wildcard">
+  <rule>
+    <from>/brevetti/**</from>
+    <to type="redirect">/$1</to>
+  </rule>
+  <rule >
+    <from>/brevetti</from>
+    <to>/</to>
+  </rule>
+</urlrewrite>

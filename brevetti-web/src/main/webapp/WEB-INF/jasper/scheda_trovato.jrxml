@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="scheda_trovati" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="273"/>
+	<style name="riquadro" mode="Opaque" forecolor="#000000" backcolor="#F7F4F4" fill="Solid" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="20" leftPadding="5" bottomPadding="5" rightPadding="5">
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25" lineColor="#CCCCCC"/>
+			<leftPen lineWidth="0.25" lineColor="#CCCCCC"/>
+			<bottomPen lineWidth="0.25" lineColor="#6D6D8F"/>
+			<rightPen lineWidth="0.25" lineColor="#6D6D8F"/>
+		</box>
+	</style>
+	<style name="etichette" mode="Opaque" forecolor="#236A49" backcolor="#F5F5FC" fill="Solid" fontSize="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" >
+		<box>
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.0" lineColor="#666666"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.25" lineColor="#666666"/>
+			<rightPen lineWidth="0.25" lineColor="#666666"/>
+		</box>
+	</style>
+	<style name="descrizioni" hAlign="Justified" fontSize="11" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" />
+	<style name="riquadro_1" mode="Opaque" forecolor="#000000" backcolor="#F7F4F4" fill="Solid" fontSize="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+			<pen lineWidth="0.25"/>
+			<topPen lineWidth="0.25" lineColor="#CCCCCC"/>
+			<leftPen lineWidth="0.25" lineColor="#CCCCCC"/>
+			<bottomPen lineWidth="0.25" lineColor="#6D6D8F"/>
+			<rightPen lineWidth="0.25" lineColor="#6D6D8F"/>
+		</box>
+	</style>
+	<parameter name="nsrif" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     TROVATI."TITOLO" AS TROVATI_TITOLO,
+     TROVATI."DESCRIZIONE" AS TROVATI_DESCRIZIONE,
+     TROVATI."USI" AS TROVATI_USI,
+     TROVATI."VANTAGGI" AS TROVATI_VANTAGGI,
+     TROVATI."PAROLA_CHIAVE" AS TROVATI_PAROLA_CHIAVE,
+     TROVATI."NSRIF" AS TROVATI_NSRIF
+FROM
+     "BREVETTI"."TROVATI" TROVATI
+WHERE
+     NSRIF = $P{nsrif}]]>
+	</queryString>
+	<field name="TROVATI_TITOLO" class="java.lang.String"/>
+	<field name="TROVATI_DESCRIZIONE" class="java.lang.String"/>
+	<field name="TROVATI_USI" class="java.lang.String"/>
+	<field name="TROVATI_VANTAGGI" class="java.lang.String"/>
+	<field name="TROVATI_PAROLA_CHIAVE" class="java.lang.String"/>
+	<field name="TROVATI_NSRIF" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="110">
+			<image>
+				<reportElement x="0" y="0" width="555" height="105"/>
+				<imageExpression class="java.lang.String"><![CDATA["header.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="96" splitType="Prevent">
+			<rectangle radius="4">
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="18" width="554" height="75" forecolor="#002B5B" backcolor="#F5F5F5"/>
+			</rectangle>
+			<image>
+				<reportElement x="32" y="0" width="130" height="37"/>
+				<imageExpression class="java.lang.String"><![CDATA["title-bg.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="32" y="0" width="130" height="35" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Scheda di dettaglio]]></text>
+			</staticText>
+			<elementGroup>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="8" y="37" width="540" height="27"/>
+					<textElement>
+						<font size="14" isBold="true" isUnderline="false" />
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{TROVATI_TITOLO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="descrizioni" positionType="Float" x="32" y="69" width="492" height="20">
+						<printWhenExpression><![CDATA[$F{TROVATI_DESCRIZIONE}!=null
+&& !$F{TROVATI_DESCRIZIONE}.equals( "" )]]></printWhenExpression>
+					</reportElement>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{TROVATI_DESCRIZIONE}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+		<band height="33" splitType="Prevent"/>
+		<band height="197" splitType="Prevent">
+			<frame>
+				<reportElement mode="Transparent" x="1" y="9" width="265" height="86" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<rectangle radius="4">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="265" height="86" forecolor="#002B5B"/>
+				</rectangle>
+				<subreport>
+					<reportElement style="riquadro" x="3" y="3" width="259" height="80" forecolor="#000000" backcolor="#FFFFFF"/>
+					<subreportParameter name="nsrif">
+						<subreportParameterExpression><![CDATA[$P{nsrif}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "inventori_trovato.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<image>
+				<reportElement x="32" y="0" width="95" height="25"/>
+				<imageExpression class="java.lang.String"><![CDATA["bg-titoletto-scheda.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="32" y="-1" width="95" height="25" backcolor="#002B5B"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Inventori]]></text>
+			</staticText>
+			<frame>
+				<reportElement style="riquadro_1" positionType="Float" x="1" y="117" width="265" height="43" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<box>
+					<pen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<topPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineColor="#FFFFFF"/>
+				</box>
+				<rectangle radius="4">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="1" width="265" height="42" forecolor="#002B5B"/>
+				</rectangle>
+				<subreport>
+					<reportElement style="riquadro" x="3" y="5" width="259" height="34" backcolor="#FFFFFF"/>
+					<subreportParameter name="nsrif">
+						<subreportParameterExpression><![CDATA[$P{nsrif}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "titolarita_trovato.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<image>
+				<reportElement positionType="Float" x="32" y="105" width="95" height="25"/>
+				<imageExpression class="java.lang.String"><![CDATA["bg-titoletto-scheda.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="32" y="105" width="95" height="25" backcolor="#002B5B"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Titolarità]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Transparent" x="290" y="9" width="265" height="46" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<rectangle radius="4">
+					<reportElement stretchType="RelativeToTallestObject" x="1" y="0" width="264" height="43" forecolor="#002B5B"/>
+				</rectangle>
+				<subreport>
+					<reportElement style="riquadro" x="5" y="5" width="253" height="33" backcolor="#FFFFFF"/>
+					<subreportParameter name="nsrif">
+						<subreportParameterExpression><![CDATA[$P{nsrif}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="tipo">
+						<subreportParameterExpression><![CDATA[1]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "classificazioni_trovato.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<image>
+				<reportElement x="321" y="0" width="95" height="25"/>
+				<imageExpression class="java.lang.String"><![CDATA["bg-titoletto-scheda.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="321" y="0" width="95" height="25" backcolor="#002B5B"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Classificazioni]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="291" y="75" width="265" height="43" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<rectangle radius="4">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="264" height="42" forecolor="#002B5B"/>
+				</rectangle>
+				<subreport>
+					<reportElement style="riquadro" x="4" y="4" width="253" height="34" backcolor="#FFFFFF"/>
+					<subreportParameter name="nsrif">
+						<subreportParameterExpression><![CDATA[$P{nsrif}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="tipo">
+						<subreportParameterExpression><![CDATA[2]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR} + "classificazioni_trovato.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<image>
+				<reportElement positionType="Float" x="321" y="64" width="95" height="25"/>
+				<imageExpression class="java.lang.String"><![CDATA["bg-titoletto-scheda.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="323" y="64" width="95" height="25" backcolor="#002B5B"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Sett. tecnologico]]></text>
+			</staticText>
+			<frame>
+				<reportElement positionType="Float" mode="Transparent" x="291" y="140" width="265" height="47" forecolor="#FFFFFF" backcolor="#FFFFFF"/>
+				<rectangle radius="4">
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="264" height="47" forecolor="#002B5B"/>
+				</rectangle>
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" mode="Opaque" x="4" y="11" width="253" height="33" forecolor="#000000" backcolor="#FFFFFF">
+						<printWhenExpression><![CDATA[$F{TROVATI_PAROLA_CHIAVE}!=null &&
+!$F{TROVATI_PAROLA_CHIAVE}.equals( "" )]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+						<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+						<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+						<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="0.5" lineColor="#FFFFFF"/>
+					</box>
+					<textElement>
+						<font isItalic="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{TROVATI_PAROLA_CHIAVE}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement positionType="Float" x="321" y="127" width="95" height="25"/>
+				<imageExpression class="java.lang.String"><![CDATA["bg-titoletto-scheda.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement positionType="Float" x="321" y="127" width="95" height="25" backcolor="#002B5B"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Keyword]]></text>
+			</staticText>
+		</band>
+		<band height="58" splitType="Prevent">
+			<rectangle radius="4">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="12" width="555" height="43" forecolor="#002B5B"/>
+			</rectangle>
+			<image>
+				<reportElement positionType="Float" x="32" y="0" width="95" height="25"/>
+				<imageExpression class="java.lang.String"><![CDATA["bg-titoletto-scheda.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="32" y="0" width="95" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Vantaggi]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="descrizioni" x="32" y="24" width="492" height="30">
+					<printWhenExpression><![CDATA[$F{TROVATI_VANTAGGI}!=null
+&& !$F{TROVATI_VANTAGGI}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TROVATI_VANTAGGI}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="58" splitType="Prevent">
+			<rectangle radius="4">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="12" width="555" height="43" forecolor="#002B5B"/>
+			</rectangle>
+			<image>
+				<reportElement positionType="Float" x="32" y="0" width="95" height="25"/>
+				<imageExpression class="java.lang.String"><![CDATA["bg-titoletto-scheda.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="32" y="0" width="95" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Applicazioni]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="descrizioni" x="32" y="25" width="492" height="20">
+					<printWhenExpression><![CDATA[$F{TROVATI_USI}!=null &&
+!$F{TROVATI_USI}.equals( "" )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TROVATI_USI}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22">
+			<staticText>
+				<reportElement x="3" y="2" width="552" height="20" forecolor="#880010"/>
+				<box>
+					<pen lineWidth="0.25" lineStyle="Dotted" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.5" lineStyle="Dotted" lineColor="#880010"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Consiglio Nazionale delle Ricerche - P.le Aldo Moro, 7 - 00185 Roma - E-mail: ipr@cnr.it]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

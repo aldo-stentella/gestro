@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="StrutsProcess">
+ <PROCESS-ITEM ID="home" NAME="forward0" PATH="/home.jsp"
+  SHAPE="32,17,0,0" TARGET="page0" TITLE="home" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="login" NAME="forward1" PATH="/login.jsp"
+  SHAPE="32,129,0,0" TARGET="page1" TITLE="login" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="null" NAME="forward2"
+  PATH="/WEB-INF/jsp/util/null.jsp" SHAPE="32,497,0,0" TARGET="page2"
+  TITLE="null" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="java.lang.Exception" NAME="exception0"
+  PATH="/errorPage.jsp" SHAPE="32,609,0,0" TARGET="page3"
+  TITLE="Exception" TYPE="exception" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM
+  ID="it.cnr.brevetti.login.exceptions.ExpiredSessionException"
+  NAME="exception1" PATH="/errorPage.jsp" SHAPE="32,721,0,0"
+  TARGET="page3" TITLE="ExpiredSessionException" TYPE="exception" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#GesInv" NAME="action0" PATH="/GesInv"
+  SHAPE="32,833,0,0" TITLE="inventori" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="FormInventore" NAME="forward0"
+   PATH="/Inventore.jsp" TARGET="page4" TITLE="FormInventore"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="QbeInv" NAME="forward1" PATH="/QbeInv.jsp"
+   TARGET="page5" TITLE="QbeInv" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Contatti" NAME="action1" PATH="/Contatti"
+  SHAPE="32,1089,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="Contatti" NAME="forward0"
+   PATH="/reports/Contatti.jsp" TARGET="page6" TITLE="Contatti"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GesCon" NAME="action2" PATH="/GesCon"
+  SHAPE="32,1201,0,0" SUBTYPE="forward" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action2" PATH="/working.jsp" TARGET="page7"
+   TITLE="forward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SwitchDip" NAME="action3" PATH="/SwitchDip"
+  SHAPE="464,273,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="switch" NAME="forward0" PATH="/openWin.jsp"
+   TARGET="page8" TITLE="switch" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GesTro" NAME="action4" PATH="/GesTro"
+  SHAPE="272,1665,0,0" TITLE="trovatoQuery" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="seltro" NAME="forward0" PATH="/SelTro.jsp"
+   TARGET="page9" TITLE="seltro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="1.gestro" NAME="forward1" PATH="/GesTro.jsp"
+   TARGET="page10" TITLE="1.gestro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="2.qbetro" NAME="forward2" PATH="/QbeTro.jsp"
+   TARGET="page11" TITLE="2.qbetro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="trovati" NAME="forward3" PATH="/Trovati.do"
+   TARGET="action20" TITLE="trovati" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="infotrov" NAME="forward4" PATH="/InfoTrov.do"
+   TARGET="action23" TITLE="infotrov" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GesFat" NAME="action5" PATH="/GesFat"
+  SHAPE="272,2769,0,0" TITLE="fatturaQuery" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="2.qbefat" NAME="forward0" PATH="/QbeFat.jsp"
+   TARGET="page12" TITLE="2.qbefat" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="consultazione" NAME="forward1"
+   PATH="/GetFattura.do?readonly=y" TARGET="action19"
+   TITLE="consultazione" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="gestione" NAME="forward2"
+   PATH="/GetFattura.do?readonly=n" TARGET="action19" TITLE="gestione"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="selfat" NAME="forward3" PATH="/SelFat.jsp"
+   TARGET="page13" TITLE="selfat" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="1.gesfat" NAME="forward4" PATH="/GesFat.jsp"
+   TARGET="page14" TITLE="1.gesfat" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InventoreForm" NAME="action6" PATH="/InventoreForm"
+  SHAPE="448,3105,0,0" TITLE="inventori" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="FormInventore" NAME="forward0"
+   PATH="/FormInventore.jsp" TARGET="page15" TITLE="FormInventore"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="SelInventore" NAME="forward1"
+   PATH="/SelInventore.jsp" TARGET="page16" TITLE="SelInventore"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SelClasse" NAME="action7" PATH="/SelClasse"
+  SHAPE="32,3393,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="SelClasse" NAME="forward0"
+   PATH="/SelClasse.jsp" TARGET="page17" TITLE="SelClasse"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SelStato" NAME="action8" PATH="/SelStato"
+  SHAPE="32,3505,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="SelStato" NAME="forward0"
+   PATH="/SelStato.jsp" TARGET="page18" TITLE="SelStato" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InfoClasse" NAME="action9" PATH="/InfoClasse"
+  SHAPE="32,3617,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="InfoClasse" NAME="forward0"
+   PATH="/InfoClasse.jsp" TARGET="page19" TITLE="InfoClasse"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GesRub" NAME="action10" PATH="/GesRub"
+  SHAPE="32,1313,0,0" SUBTYPE="forward" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action10" PATH="/working.jsp"
+   TARGET="page7" TITLE="forward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SelIstituto" NAME="action11" PATH="/SelIstituto"
+  SHAPE="32,3729,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="SelIstituto" NAME="forward0"
+   PATH="/SelIstituto.jsp" TARGET="page20" TITLE="SelIstituto"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#AddVoce" NAME="action12" PATH="/AddVoce"
+  SHAPE="32,3841,0,0" TITLE="vociFattura" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddVoce" NAME="forward0" PATH="/AddVoce.jsp"
+   TARGET="page21" TITLE="AddVoce" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#NewCon" NAME="action14" PATH="/NewCon"
+  SHAPE="32,1425,0,0" SUBTYPE="forward" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action14" PATH="/working.jsp"
+   TARGET="page7" TITLE="forward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InfoCatalogoPDF" NAME="action15"
+  PATH="/InfoCatalogoPDF" SHAPE="32,4065,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="InfoCatalogoPDF" NAME="forward0"
+   PATH="/reports/InfoCatalogoPDF.jsp" TARGET="page23"
+   TITLE="InfoCatalogoPDF" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#NewRub" NAME="action16" PATH="/NewRub"
+  SHAPE="32,1537,0,0" SUBTYPE="forward" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action16" PATH="/working.jsp"
+   TARGET="page7" TITLE="forward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#ClickAnalysis" NAME="action17" PATH="/ClickAnalysis"
+  SHAPE="32,4177,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="Tuning" NAME="forward0"
+   PATH="/reports/Tuning.jsp" TARGET="page24" TITLE="Tuning"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#DelClasse" NAME="action18" PATH="/DelClasse"
+  SHAPE="32,4433,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="DelClasse" NAME="forward0"
+   PATH="/DelClasse.jsp" TARGET="page25" TITLE="DelClasse"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GetFattura" NAME="action19" PATH="/GetFattura"
+  SHAPE="544,2753,0,0" TITLE="fatture" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="fatture" NAME="forward0" PATH="/Fatture.jsp"
+   TARGET="page26" TITLE="fatture" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Trovati" NAME="action20" PATH="/Trovati"
+  SHAPE="544,1889,0,0" TITLE="trovati" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="2.invetrov" NAME="forward2"
+   PATH="/InveTrov.jsp" TARGET="page29" TITLE="2.invetrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="1.datitrov" NAME="forward4"
+   PATH="/DatiTrov.jsp" TARGET="page31" TITLE="1.datitrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="3.richtrov" NAME="forward5"
+   PATH="/RichTrov.jsp" TARGET="page32" TITLE="3.richtrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="successful" NAME="forward6"
+   PATH="/OkTrov.jsp" TARGET="page33" TITLE="successful" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="4.clastrov" NAME="forward0"
+   PATH="/ClasTrov.jsp" TARGET="page27" TITLE="4.clastrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="5.estetrov" NAME="forward1"
+   PATH="/EsteTrov.jsp" TARGET="page28" TITLE="5.estetrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="7.valotrov" NAME="forward7"
+   PATH="/ValoTrov.jsp" TARGET="page56" TITLE="7.valotrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="8.docutrov" NAME="forward3"
+   PATH="/DocuTrov.jsp" TARGET="page71" TITLE="8.docutrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Fatture" NAME="action21" PATH="/Fatture"
+  SHAPE="976,2753,0,0" TITLE="fatture" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="fatture" NAME="forward0" PATH="/Fatture.jsp"
+   TARGET="page26" TITLE="fatture" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="successful" NAME="forward1"
+   PATH="/OkFatt.jsp" TARGET="page34" TITLE="successful" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Tuning" NAME="action22" PATH="/Tuning"
+  SHAPE="32,4289,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="Tuning" NAME="forward0"
+   PATH="/reports/Tuning.jsp" TARGET="page24" TITLE="Tuning"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="EvalCatalogo" NAME="forward1"
+   PATH="/reports/EvalCatalogo.jsp" TARGET="page35" TITLE="EvalCatalogo"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InfoTrov" NAME="action23" PATH="/InfoTrov"
+  SHAPE="544,2193,0,0" TITLE="trovati" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="infotrov" NAME="forward0"
+   PATH="/InfoTrov.jsp" TARGET="page36" TITLE="infotrov" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InfoInventore" NAME="action25" PATH="/InfoInventore"
+  SHAPE="32,3249,0,0" TITLE="inventori" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="InfoInventore" NAME="forward0"
+   PATH="/InfoInventore.jsp" TARGET="page37" TITLE="InfoInventore"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#AddDepo" NAME="action26" PATH="/AddDepo"
+  SHAPE="32,4545,0,0" TITLE="depositi" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddDepo" NAME="forward0" PATH="/AddDepo.jsp"
+   TARGET="page38" TITLE="AddDepo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddEst" NAME="forward1" PATH="/AddEst.jsp"
+   TARGET="page46" TITLE="AddEst" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddEpc" NAME="forward2" PATH="/AddEpc.jsp"
+   TARGET="page45" TITLE="AddEpc" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InfoCatalogo" NAME="action27" PATH="/InfoCatalogo"
+  SHAPE="32,4657,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="it.cnr.brevetti.util.ServiceLocatorException"
+   NAME="exception0" PATH="/reports/errorPage.jsp" TARGET="page39"
+   TITLE="ServiceLocatorException" TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="InfoCatalogo" NAME="forward0"
+   PATH="/reports/InfoCatalogo.jsp" TARGET="page40" TITLE="InfoCatalogo"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SelInventore" NAME="action28" PATH="/SelInventore"
+  SHAPE="448,3249,0,0" TITLE="inventori" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="FormInventore" NAME="forward0"
+   PATH="/FormInventore.jsp" TARGET="page15" TITLE="FormInventore"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="SelInventore" NAME="forward1"
+   PATH="/SelInventore.jsp" TARGET="page16" TITLE="SelInventore"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#NewTro" NAME="action29" PATH="/NewTro"
+  SHAPE="272,1905,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="seltipotrov" NAME="forward0"
+   PATH="/SelTipoTrov.jsp" TARGET="page69" TITLE="seltipotrov"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InfoEnte" NAME="action30" PATH="/InfoEnte"
+  SHAPE="32,5201,0,0" TITLE="entiEsterni" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="InfoEnte" NAME="forward0"
+   PATH="/InfoEnte.jsp" TARGET="page41" TITLE="InfoEnte" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#home" NAME="action31" PATH="/home"
+  SHAPE="32,6081,0,0" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#logout" NAME="action32" PATH="/logout"
+  SHAPE="464,385,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="close" NAME="forward0" PATH="/openWin.jsp"
+   TARGET="page8" TITLE="close" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#DelVoce" NAME="action33" PATH="/DelVoce"
+  SHAPE="32,5489,0,0" TITLE="vociFattura" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="DelVoce" NAME="forward0" PATH="/DelVoce.jsp"
+   TARGET="page42" TITLE="DelVoce" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SelTitolare" NAME="action34" PATH="/SelTitolare"
+  SHAPE="464,5345,0,0" TITLE="entiEsterni" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="FormEnte" NAME="forward0"
+   PATH="/FormEnte.jsp?action=EnteForm.do" TARGET="page43"
+   TITLE="FormEnte" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="SelTitolare" NAME="forward1"
+   PATH="/SelTitolare.jsp" TARGET="page44" TITLE="SelTitolare"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#EnteForm" NAME="action36" PATH="/EnteForm"
+  SHAPE="464,5201,0,0" TITLE="entiEsterni" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="FormEnte" NAME="forward0"
+   PATH="/FormEnte.jsp?action=EnteForm.do" TARGET="page43"
+   TITLE="FormEnte" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="SelTitolare" NAME="forward1"
+   PATH="/SelTitolare.jsp" TARGET="page44" TITLE="SelTitolare"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#NewFat" NAME="action37" PATH="/NewFat"
+  SHAPE="272,3009,0,0" SUBTYPE="forward" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action37" PATH="/GetFattura.do?readonly=n"
+   TARGET="action19" TITLE="forward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#AddNote" NAME="action38" PATH="/AddNote"
+  SHAPE="32,5745,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddNote" NAME="forward0" PATH="/AddNote.jsp"
+   TARGET="page47" TITLE="AddNote" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#DelTitolare" NAME="action39" PATH="/DelTitolare"
+  SHAPE="32,5857,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="DelTitolare" NAME="forward0"
+   PATH="/DelTitolare.jsp" TARGET="page48" TITLE="DelTitolare"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#DelDepo" NAME="action40" PATH="/DelDepo"
+  SHAPE="32,5969,0,0" TITLE="depositi" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="DelDepo" NAME="forward0" PATH="/DelDepo.jsp"
+   TARGET="page49" TITLE="DelDepo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Catalogo" NAME="action41" PATH="/Catalogo"
+  SHAPE="32,4801,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="ListaCatalogo" NAME="forward0"
+   PATH="/reports/ListaCatalogo.jsp" TARGET="page50"
+   TITLE="ListaCatalogo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="java.lang.Exception" NAME="exception0"
+   PATH="/reports/errorPage.jsp" TARGET="page39" TITLE="Exception"
+   TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="Catalogo" NAME="forward1"
+   PATH="/reports/catalogo.jsp" TARGET="page51" TITLE="Catalogo"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page0" PATH="/home.jsp" SHAPE="240,34,0,0"
+  SUBTYPE="jsp" TITLE="home.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page1" PATH="/login.jsp" SHAPE="256,146,0,0"
+  SUBTYPE="jsp" TITLE="login.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/login.do" SUBTYPE="confirmed"
+   TARGET="action68" TITLE="/login.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page2" PATH="/WEB-INF/jsp/util/null.jsp"
+  SHAPE="240,514,0,0" SUBTYPE="jsp" TITLE="null.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page3" PATH="/errorPage.jsp" SHAPE="256,626,0,0"
+  SUBTYPE="jsp" TITLE="errorPage.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page4" PATH="/Inventore.jsp" SHAPE="256,850,0,0"
+  SUBTYPE="jsp" TITLE="Inventore.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/AddInv.do"
+   SUBTYPE="confirmed" TARGET="action42" TITLE="/AddInv.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page5" PATH="/QbeInv.jsp" SHAPE="256,994,0,0"
+  SUBTYPE="jsp" TITLE="QbeInv.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page6" PATH="/reports/Contatti.jsp"
+  SHAPE="240,1106,0,0" SUBTYPE="jsp" TITLE="Contatti.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page7" PATH="/working.jsp" SHAPE="288,1218,0,0"
+  SUBTYPE="jsp" TITLE="working.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page8" PATH="/openWin.jsp" SHAPE="704,146,0,0"
+  SUBTYPE="jsp" TITLE="openWin.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page9" PATH="/SelTro.jsp" SHAPE="32,1650,0,0"
+  SUBTYPE="jsp" TITLE="SelTro.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesTro.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/GesTro.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page10" PATH="/GesTro.jsp" SHAPE="32,1890,0,0"
+  SUBTYPE="jsp" TITLE="GesTro.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesTro.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/GesTro.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page11" PATH="/QbeTro.jsp" SHAPE="544,1650,0,0"
+  SUBTYPE="jsp" TITLE="QbeTro.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesTro.do"
+   SUBTYPE="confirmed" TARGET="action4" TITLE="/GesTro.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page12" PATH="/QbeFat.jsp" SHAPE="32,2754,0,0"
+  SUBTYPE="jsp" TITLE="QbeFat.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesFat.do"
+   SUBTYPE="confirmed" TARGET="action5" TITLE="/GesFat.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page13" PATH="/SelFat.jsp" SHAPE="32,2994,0,0"
+  SUBTYPE="jsp" TITLE="SelFat.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesFat.do"
+   SUBTYPE="confirmed" TARGET="action5" TITLE="/GesFat.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page14" PATH="/GesFat.jsp" SHAPE="544,2994,0,0"
+  SUBTYPE="jsp" TITLE="GesFat.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesFat.do"
+   SUBTYPE="confirmed" TARGET="action5" TITLE="/GesFat.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page15" PATH="/FormInventore.jsp"
+  SHAPE="672,3122,0,0" SUBTYPE="jsp" TITLE="FormInventore.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/InventoreForm.do"
+   SUBTYPE="confirmed" TARGET="action6" TITLE="/InventoreForm.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page16" PATH="/SelInventore.jsp"
+  SHAPE="672,3266,0,0" SUBTYPE="jsp" TITLE="SelInventore.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page17" PATH="/SelClasse.jsp" SHAPE="240,3410,0,0"
+  SUBTYPE="jsp" TITLE="SelClasse.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page18" PATH="/SelStato.jsp" SHAPE="240,3522,0,0"
+  SUBTYPE="jsp" TITLE="SelStato.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page19" PATH="/InfoClasse.jsp" SHAPE="240,3634,0,0"
+  SUBTYPE="jsp" TITLE="InfoClasse.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page20" PATH="/SelIstituto.jsp"
+  SHAPE="240,3746,0,0" SUBTYPE="jsp" TITLE="SelIstituto.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page21" PATH="/AddVoce.jsp" SHAPE="240,3858,0,0"
+  SUBTYPE="jsp" TITLE="AddVoce.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/AddVoce.do"
+   SUBTYPE="confirmed" TARGET="action12" TITLE="/AddVoce.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page23" PATH="/reports/InfoCatalogoPDF.jsp"
+  SHAPE="240,4082,0,0" SUBTYPE="jsp" TITLE="InfoCatalogoPDF.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page24" PATH="/reports/Tuning.jsp"
+  SHAPE="256,4194,0,0" SUBTYPE="jsp" TITLE="Tuning.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page25" PATH="/DelClasse.jsp" SHAPE="240,4450,0,0"
+  SUBTYPE="jsp" TITLE="DelClasse.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page26" PATH="/Fatture.jsp" SHAPE="768,2770,0,0"
+  SUBTYPE="jsp" TITLE="Fatture.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Fatture.do"
+   SUBTYPE="confirmed" TARGET="action21" TITLE="/Fatture.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page27" PATH="/ClasTrov.jsp" SHAPE="272,2210,0,0"
+  SUBTYPE="jsp" TITLE="ClasTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Trovati.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/Trovati.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page28" PATH="/EsteTrov.jsp" SHAPE="272,2322,0,0"
+  SUBTYPE="jsp" TITLE="EsteTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Trovati.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/Trovati.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page29" PATH="/InveTrov.jsp" SHAPE="272,2434,0,0"
+  SUBTYPE="jsp" TITLE="InveTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Trovati.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/Trovati.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page31" PATH="/DatiTrov.jsp" SHAPE="272,2658,0,0"
+  SUBTYPE="jsp" TITLE="DatiTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Trovati.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/Trovati.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page32" PATH="/RichTrov.jsp" SHAPE="816,1906,0,0"
+  SUBTYPE="jsp" TITLE="RichTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Trovati.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/Trovati.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page33" PATH="/OkTrov.jsp" SHAPE="816,2210,0,0"
+  SUBTYPE="jsp" TITLE="OkTrov.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page34" PATH="/OkFatt.jsp" SHAPE="1200,2770,0,0"
+  SUBTYPE="jsp" TITLE="OkFatt.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page35" PATH="/reports/EvalCatalogo.jsp"
+  SHAPE="256,4306,0,0" SUBTYPE="jsp" TITLE="EvalCatalogo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page36" PATH="/InfoTrov.jsp" SHAPE="816,2322,0,0"
+  SUBTYPE="jsp" TITLE="InfoTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/InfoTrov.do"
+   SUBTYPE="confirmed" TARGET="action23" TITLE="/InfoTrov.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page37" PATH="/InfoInventore.jsp"
+  SHAPE="240,3266,0,0" SUBTYPE="jsp" TITLE="InfoInventore.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/SelInventore.do"
+   SUBTYPE="confirmed" TARGET="action28" TITLE="/SelInventore.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page38" PATH="/AddDepo.jsp" SHAPE="240,4562,0,0"
+  SUBTYPE="jsp" TITLE="AddDepo.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/InsDepo.do"
+   SUBTYPE="confirmed" TARGET="action43" TITLE="/InsDepo.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page39" PATH="/reports/errorPage.jsp"
+  SHAPE="272,4674,0,0" SUBTYPE="jsp" TITLE="errorPage.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page40" PATH="/reports/InfoCatalogo.jsp"
+  SHAPE="272,5106,0,0" SUBTYPE="jsp" TITLE="InfoCatalogo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page41" PATH="/InfoEnte.jsp" SHAPE="240,5218,0,0"
+  SUBTYPE="jsp" TITLE="InfoEnte.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/EnteForm.do"
+   SUBTYPE="confirmed" TARGET="action36" TITLE="/EnteForm.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page42" PATH="/DelVoce.jsp" SHAPE="240,5506,0,0"
+  SUBTYPE="jsp" TITLE="DelVoce.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/DelVoce.do"
+   SUBTYPE="confirmed" TARGET="action33" TITLE="/DelVoce.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page43" PATH="/FormEnte.jsp" SHAPE="688,5218,0,0"
+  SUBTYPE="jsp" TITLE="FormEnte.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/EnteForm.do"
+   SUBTYPE="confirmed" TARGET="action36" TITLE="/EnteForm.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page44" PATH="/SelTitolare.jsp"
+  SHAPE="688,5362,0,0" SUBTYPE="jsp" TITLE="SelTitolare.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page45" PATH="/AddEpc.jsp" SHAPE="32,5602,0,0"
+  SUBTYPE="jsp" TITLE="AddEpc.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/InsEpc.do"
+   SUBTYPE="confirmed" TARGET="action44" TITLE="/InsEpc.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page46" PATH="/AddEst.jsp" SHAPE="480,5602,0,0"
+  SUBTYPE="jsp" TITLE="AddEst.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/InsPct.do"
+   SUBTYPE="confirmed" TARGET="action35" TITLE="/InsPct.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page47" PATH="/AddNote.jsp" SHAPE="240,5762,0,0"
+  SUBTYPE="jsp" TITLE="AddNote.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page48" PATH="/DelTitolare.jsp"
+  SHAPE="240,5874,0,0" SUBTYPE="jsp" TITLE="DelTitolare.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page49" PATH="/DelDepo.jsp" SHAPE="240,5986,0,0"
+  SUBTYPE="jsp" TITLE="DelDepo.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/DelDepo.do"
+   SUBTYPE="confirmed" TARGET="action40" TITLE="/DelDepo.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page50" PATH="/reports/ListaCatalogo.jsp"
+  SHAPE="272,4818,0,0" SUBTYPE="jsp" TITLE="ListaCatalogo.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page51" PATH="/reports/catalogo.jsp"
+  SHAPE="272,4994,0,0" SUBTYPE="jsp" TITLE="catalogo.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#AddInv" NAME="action42" PATH="/AddInv"
+  SHAPE="32,977,0,0" TITLE="inventori" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="FormInventore" NAME="forward0"
+   PATH="/Inventore.jsp" TARGET="page4" TITLE="FormInventore"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="QbeInv" NAME="forward1" PATH="/QbeInv.jsp"
+   TARGET="page5" TITLE="QbeInv" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InsDepo" NAME="action43" PATH="/InsDepo"
+  SHAPE="32,5569,0,0" TITLE="depositi" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddDepo" NAME="forward0" PATH="/AddDepo.jsp"
+   TARGET="page38" TITLE="AddDepo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddEst" NAME="forward1" PATH="/AddEst.jsp"
+   TARGET="page46" TITLE="AddEst" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddEpc" NAME="forward2" PATH="/AddEpc.jsp"
+   TARGET="page45" TITLE="AddEpc" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InsPct" NAME="action35" PATH="/InsPct"
+  SHAPE="80,6225,0,0" TITLE="depositi" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddEpc" NAME="forward0" PATH="/AddEpc.jsp"
+   TARGET="page45" TITLE="AddEpc" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddEst" NAME="forward1" PATH="/AddEst.jsp"
+   TARGET="page46" TITLE="AddEst" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddDepo" NAME="forward2" PATH="/AddDepo.jsp"
+   TARGET="page38" TITLE="AddDepo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InsEpc" NAME="action44" PATH="/InsEpc"
+  SHAPE="592,6689,0,0" TITLE="depositi" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddEpc" NAME="forward0" PATH="/AddEpc.jsp"
+   TARGET="page45" TITLE="AddEpc" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddEst" NAME="forward1" PATH="/AddEst.jsp"
+   TARGET="page46" TITLE="AddEst" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddDepo" NAME="forward2" PATH="/AddDepo.jsp"
+   TARGET="page38" TITLE="AddDepo" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#DelStorico" NAME="action45" PATH="/DelStorico"
+  SHAPE="32,6961,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="DelStorico" NAME="forward0"
+   PATH="/DelStorico.jsp" TARGET="page30" TITLE="DelStorico"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page30" PATH="/DelStorico.jsp" SHAPE="240,6978,0,0"
+  SUBTYPE="jsp" TITLE="DelStorico.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#SelStorico" NAME="action46" PATH="/SelStorico"
+  SHAPE="464,6225,0,0" TITLE="entiEsterni" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="SelTitolare" NAME="forward0"
+   PATH="/SelTitolare.jsp" TARGET="page44" TITLE="SelTitolare"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="FormEnte" NAME="forward1"
+   PATH="/FormEnte.jsp?action=EnteFormS.do" TARGET="page43"
+   TITLE="FormEnte" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#EnteFormS" NAME="action47" PATH="/EnteFormS"
+  SHAPE="464,6225,0,0" TITLE="entiEsterni" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="FormEnte" NAME="forward0"
+   PATH="/FormEnte.jsp?action=EnteFormS.do" TARGET="page43"
+   TITLE="FormEnte" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="SelTitolare" NAME="forward1"
+   PATH="/SelTitolare.jsp" TARGET="page44" TITLE="SelTitolare"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GesFat2" NAME="action48" PATH="/GesFat2"
+  SHAPE="48,3329,0,0" TITLE="fatturaQuery" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="2.qbefat" NAME="forward0" PATH="/QbeFat2.jsp"
+   TARGET="page52" TITLE="2.qbefat" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="consultazione" NAME="forward1"
+   PATH="/Fatture2.jsp" TARGET="page55" TITLE="consultazione"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="selfat" NAME="forward3" PATH="/SelFat2.jsp"
+   TARGET="page53" TITLE="selfat" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page52" PATH="/QbeFat2.jsp" SHAPE="464,3441,0,0"
+  SUBTYPE="jsp" TITLE="QbeFat2.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesFat2.do"
+   SUBTYPE="confirmed" TARGET="action48" TITLE="/GesFat2.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page53" PATH="/SelFat2.jsp" SHAPE="464,3553,0,0"
+  SUBTYPE="jsp" TITLE="SelFat2.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesFat2.do"
+   SUBTYPE="confirmed" TARGET="action48" TITLE="/GesFat2.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page55" PATH="/Fatture2.jsp" SHAPE="880,3329,0,0"
+  SUBTYPE="jsp" TITLE="Fatture2.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page56" PATH="/ValoTrov.jsp" SHAPE="960,1889,0,0"
+  SUBTYPE="jsp" TITLE="ValoTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Trovati.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/Trovati.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#InfoVal" NAME="action49" PATH="/InfoVal"
+  SHAPE="32,4273,0,0" TITLE="valorizzazioni" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="InfoVal" NAME="forward0" PATH="/InfoVal.jsp"
+   TARGET="page54" TITLE="InfoVal" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page54" PATH="/InfoVal.jsp" SHAPE="240,5538,0,0"
+  SUBTYPE="jsp" TITLE="InfoVal.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/InfoVal.do"
+   SUBTYPE="confirmed" TARGET="action49" TITLE="/InfoVal.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GesVal" NAME="action50" PATH="/GesVal"
+  SHAPE="32,6321,0,0" TITLE="valorizzazioneQuery" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="2.qbeval" NAME="forward2" PATH="/QbeVal.jsp"
+   TARGET="page58" TITLE="2.qbeval" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="selval" NAME="forward1" PATH="/SelVal.jsp"
+   TARGET="page57" TITLE="selval" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="valorizzazione" NAME="forward0"
+   PATH="/Valorizzazione.jsp" TARGET="page59" TITLE="valorizzazione"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page57" PATH="/SelVal.jsp" SHAPE="272,6338,0,0"
+  SUBTYPE="jsp" TITLE="SelVal.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesVal.do"
+   SUBTYPE="confirmed" TARGET="action50" TITLE="/GesVal.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page58" PATH="/QbeVal.jsp" SHAPE="272,6194,0,0"
+  SUBTYPE="jsp" TITLE="QbeVal.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesVal.do"
+   SUBTYPE="confirmed" TARGET="action50" TITLE="/GesVal.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Valorizzazione" NAME="action51"
+  PATH="/Valorizzazione" SHAPE="32,7521,0,0" TITLE="valorizzazioni"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="valorizzazione" NAME="forward0"
+   PATH="/Valorizzazione.jsp" TARGET="page59" TITLE="valorizzazione"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="successful" NAME="forward1" PATH="/OkVal.jsp"
+   TARGET="page60" TITLE="successful" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page59" PATH="/Valorizzazione.jsp"
+  SHAPE="240,7538,0,0" SUBTYPE="jsp" TITLE="Valorizzazione.jsp"
+  TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Valorizzazione.do"
+   SUBTYPE="confirmed" TARGET="action51" TITLE="/Valorizzazione.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SelClu" NAME="action52" PATH="/SelClu"
+  SHAPE="64,7521,0,0" SUBTYPE="forward" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action52" PATH="/SelClu.jsp"
+   TARGET="page61" TITLE="forward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page61" PATH="/SelClu.jsp" SHAPE="304,7538,0,0"
+  SUBTYPE="jsp" TITLE="SelClu.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesVal.do"
+   SUBTYPE="confirmed" TARGET="action50" TITLE="/GesVal.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#SelAzienda" NAME="action53" PATH="/SelAzienda"
+  SHAPE="80,7521,0,0" SUBTYPE="forward" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="action53" PATH="/SelAzienda.jsp"
+   TARGET="page62" TITLE="forward" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page62" PATH="/SelAzienda.jsp" SHAPE="320,7538,0,0"
+  SUBTYPE="jsp" TITLE="SelAzienda.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/GesVal.do"
+   SUBTYPE="confirmed" TARGET="action50" TITLE="/GesVal.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#AddVal" NAME="action54" PATH="/AddVal"
+  SHAPE="80,8817,0,0" TITLE="valorizzazioni" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="valorizzazione" NAME="forward0"
+   PATH="/Valorizzazione.jsp" TARGET="page59" TITLE="valorizzazione"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page60" PATH="/OkVal.jsp" SHAPE="240,7633,0,0"
+  SUBTYPE="jsp" TITLE="OkVal.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Valorizzazione.do"
+   SUBTYPE="confirmed" TARGET="action51" TITLE="/Valorizzazione.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#Documenti" NAME="action55" PATH="/Documenti"
+  SHAPE="32,10049,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="documenti" NAME="forward0"
+   PATH="/Documenti.jsp" TARGET="page63" TITLE="documenti"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page63" PATH="/Documenti.jsp" SHAPE="240,10066,0,0"
+  SUBTYPE="jsp" TITLE="Documenti.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page64" PATH="/jsp/util/close.jsp"
+  SHAPE="240,10161,0,0" SUBTYPE="jsp" TITLE="close.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page66" PATH="/WEB-INF/jsp/util/close.jsp"
+  SHAPE="240,10273,0,0" SUBTYPE="jsp" TITLE="close.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#DelDocumenti" NAME="action56" PATH="/DelDocumenti"
+  SHAPE="32,11537,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="documenti" NAME="forward0"
+   PATH="/Documenti.jsp" TARGET="page63" TITLE="documenti"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page65" PATH="/WEB-INF/jsp/util/updateAndClose.jsp"
+  SHAPE="240,11554,0,0" SUBTYPE="jsp" TITLE="updateAndClose.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#Contratti" NAME="action57" PATH="/Contratti"
+  SHAPE="32,11313,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="contratti" NAME="forward0"
+   PATH="/Contratti.jsp" TARGET="page68" TITLE="contratti"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page68" PATH="/Contratti.jsp" SHAPE="240,11425,0,0"
+  SUBTYPE="jsp" TITLE="Contratti.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#AddDepoList" NAME="action58" PATH="/AddDepoList"
+  SHAPE="32,12913,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddDepoList" NAME="forward0"
+   PATH="/AddDepoList.jsp" TARGET="page67" TITLE="AddDepoList"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddDepoWiz" NAME="forward1"
+   PATH="/AddDepoWiz.jsp" TARGET="page70" TITLE="AddDepoWiz"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page67" PATH="/AddDepoList.jsp"
+  SHAPE="240,12930,0,0" SUBTYPE="jsp" TITLE="AddDepoList.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page69" PATH="/SelTipoTrov.jsp"
+  SHAPE="480,2017,0,0" SUBTYPE="jsp" TITLE="SelTipoTrov.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="close" NAME="forward3"
+  PATH="/WEB-INF/jsp/util/close.jsp" SHAPE="32,11425,0,0"
+  TARGET="page66" TITLE="close" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="updateAndClose" NAME="forward4"
+  PATH="/WEB-INF/jsp/util/updateAndClose.jsp" SHAPE="32,12849,0,0"
+  TARGET="page65" TITLE="updateAndClose" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page70" PATH="/AddDepoWiz.jsp"
+  SHAPE="240,13025,0,0" SUBTYPE="jsp" TITLE="AddDepoWiz.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/AddDepoWiz.do"
+   SUBTYPE="confirmed" TARGET="action59" TITLE="/AddDepoWiz.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#AddDepoWiz" NAME="action59" PATH="/AddDepoWiz"
+  SHAPE="32,14225,0,0" TITLE="depositi" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddDepoWiz" NAME="forward1"
+   PATH="/AddDepoWiz.jsp" TARGET="page70" TITLE="AddDepoWiz"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="AddDepoList" NAME="forward0"
+   PATH="/AddDepoList.jsp" TARGET="page67" TITLE="AddDepoList"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page71" PATH="/DocuTrov.jsp" SHAPE="752,2001,0,0"
+  SUBTYPE="jsp" TITLE="DocuTrov.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/Trovati.do"
+   SUBTYPE="confirmed" TARGET="action20" TITLE="/Trovati.do" TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#DelContratti" NAME="action60" PATH="/DelContratti"
+  SHAPE="32,14481,0,0" TYPE="action" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#external#Home" NAME="action61" PATH="/external/Home"
+  SHAPE="448,497,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="Ehome" NAME="forward0"
+   PATH="/external/Home.jsp" TARGET="page86" TITLE="Ehome"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="java.lang.Exception" NAME="exception0"
+   PATH="/external/errorPage.jsp" TARGET="page90" TITLE="Exception"
+   TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="EselPro" NAME="forward2"
+   PATH="/external/GesPro.do" TARGET="action65" TITLE="EselPro"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#external#AddPro" NAME="action62"
+  PATH="/external/AddPro" SHAPE="32,673,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="AddPro" NAME="forward0"
+   PATH="/external/AddPro.jsp" TARGET="page83" TITLE="AddPro"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="EokPro" NAME="forward3"
+   PATH="/external/OkPro.jsp" TARGET="page87" TITLE="EokPro"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="java.lang.Exception" NAME="exception0"
+   PATH="/external/errorPage.jsp" TARGET="page90" TITLE="Exception"
+   TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#GesPro" NAME="action63" PATH="/GesPro"
+  SHAPE="32,1105,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="GesPro" NAME="forward0" PATH="/QbePro.jsp"
+   TARGET="page72" TITLE="GesPro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="SelPro" NAME="forward2" PATH="/SelPro.jsp"
+   TARGET="page76" TITLE="SelPro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="InventionDisclosure" NAME="forward3"
+   PATH="/InventionDisclosure.jsp" TARGET="page77"
+   TITLE="InventionDisclosure" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#external#Logout" NAME="action64"
+  PATH="/external/Logout" SHAPE="272,513,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="java.lang.Exception" NAME="exception0"
+   PATH="/external/errorPage.jsp" TARGET="page90" TITLE="Exception"
+   TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page72" PATH="/QbePro.jsp" SHAPE="448,1217,0,0"
+  SUBTYPE="jsp" TITLE="QbePro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page76" PATH="/SelPro.jsp" SHAPE="240,1329,0,0"
+  SUBTYPE="jsp" TITLE="SelPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page77" PATH="/InventionDisclosure.jsp"
+  SHAPE="656,1105,0,0" SUBTYPE="jsp" TITLE="InventionDisclosure.jsp"
+  TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#external#GesPro" NAME="action65"
+  PATH="/external/GesPro" SHAPE="288,1729,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="EselPro" NAME="forward1"
+   PATH="/external/SelPro.jsp" TARGET="page88" TITLE="EselPro"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="EgesPro" NAME="forward0"
+   PATH="/external/GesPro.jsp" TARGET="page89" TITLE="EgesPro"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="java.lang.Exception" NAME="exception0"
+   PATH="/external/errorPage.jsp" TARGET="page90" TITLE="Exception"
+   TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="EokPro" NAME="forward2"
+   PATH="/external/OkPro.jsp" TARGET="page87" TITLE="EokPro"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="#ModPro" NAME="action66" PATH="/ModPro"
+  SHAPE="240,1729,0,0" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="OkPro" NAME="forward0" PATH="/OkPro.jsp"
+   TARGET="page80" TITLE="OkPro" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page80" PATH="/OkPro.jsp" SHAPE="656,1729,0,0"
+  SUBTYPE="jsp" TITLE="OkPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#login" NAME="action68" PATH="/login"
+  SHAPE="464,129,0,0" TITLE="login" TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT
+   ID="it.cnr.brevetti.login.exceptions.LoginFailureException"
+   NAME="exception0" PATH="/login.jsp" TARGET="page1"
+   TITLE="LoginFailureException" TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT ID="open" NAME="forward0" PATH="/openWin.jsp"
+   TARGET="page8" TITLE="open" TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page79" PATH="/external/Login.jsp"
+  SHAPE="1312,497,0,0" SUBTYPE="jsp" TITLE="Login.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/external/Login.do"
+   SUBTYPE="confirmed" TARGET="action13" TITLE="/external/Login.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page84" PATH="/external/login.jsp"
+  SHAPE="656,721,0,0" SUBTYPE="jsp" TITLE="login.jsp" TYPE="page" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT NAME="link0" PATH="/external/Login.do"
+   SUBTYPE="confirmed" TARGET="action13" TITLE="/external/Login.do"
+   TYPE="link" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="page85" PATH="/external/home.jsp"
+  SHAPE="656,833,0,0" SUBTYPE="jsp" TITLE="home.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page86" PATH="/external/Home.jsp"
+  SHAPE="1072,609,0,0" SUBTYPE="jsp" TITLE="Home.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page83" PATH="/external/AddPro.jsp"
+  SHAPE="448,785,0,0" SUBTYPE="jsp" TITLE="AddPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page74" PATH="/external/okPro.jsp"
+  SHAPE="448,897,0,0" SUBTYPE="jsp" TITLE="okPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page87" PATH="/external/OkPro.jsp"
+  SHAPE="448,1009,0,0" SUBTYPE="jsp" TITLE="OkPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page81" PATH="/external/selPro.jsp"
+  SHAPE="704,1841,0,0" SUBTYPE="jsp" TITLE="selPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page88" PATH="/external/SelPro.jsp"
+  SHAPE="912,1729,0,0" SUBTYPE="jsp" TITLE="SelPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page75" PATH="/external/gesPro.jsp"
+  SHAPE="1120,1729,0,0" SUBTYPE="jsp" TITLE="gesPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page89" PATH="/external/GesPro.jsp"
+  SHAPE="704,2065,0,0" SUBTYPE="jsp" TITLE="GesPro.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM ID="#external#Login" NAME="action13"
+  PATH="/external/Login" SHAPE="1520,497,0,0" TITLE="login"
+  TYPE="action" model-entity="StrutsProcessItem">
+  <PROCESS-ITEM-OUTPUT ID="Ehome" NAME="forward1"
+   PATH="/external/Home.do" TARGET="action61" TITLE="Ehome"
+   TYPE="forward" model-entity="StrutsProcessItemOutput"/>
+  <PROCESS-ITEM-OUTPUT
+   ID="it.cnr.brevetti.login.exceptions.LoginFailureException"
+   NAME="exception0" PATH="/external/Home.do" TARGET="action61"
+   TITLE="LoginFailureException" TYPE="exception" model-entity="StrutsProcessItemOutput"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ID="Elogin" NAME="forward5" PATH="/external/Login.jsp"
+  SHAPE="1264,513,0,0" TARGET="page79" TITLE="Elogin" TYPE="forward" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page78" PATH="/external/errorpage.jsp"
+  SHAPE="656,609,0,0" SUBTYPE="jsp" TITLE="errorpage.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+ <PROCESS-ITEM NAME="page90" PATH="/external/errorPage.jsp"
+  SHAPE="864,497,0,0" SUBTYPE="jsp" TITLE="errorPage.jsp" TYPE="page" model-entity="StrutsProcessItem"/>
+</PROCESS>
